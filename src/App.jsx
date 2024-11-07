@@ -54,7 +54,7 @@ export function App() {
   useEffect(() => {
     const getStudents = async () => {
       // const response = await fetch('https://json.link/oJbmHxLn8f.json');
-      const response = await fetch('http://localhost:3000/students');
+      const response = await fetch(`${import.meta.env.BACKEND_URL}/students`);
       const data = await response.json();
       console.log(data);
       setStudents(data);
@@ -104,7 +104,7 @@ export function App() {
     <button
         onClick={async () => {
           // use setter function when you want to use the previous state
-          await fetch('http://localhost:3000/students', {
+          await fetch(`${import.meta.env.BACKEND_URL}/students`, {
             body: JSON.stringify({
               sId: '12345466756w',
               firstName: 'AJ',

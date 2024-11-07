@@ -24,7 +24,7 @@ export const SubmitStudentPage = () => {
       <button type="button" onClick={async () => {
         console.log("lastName: ",lastName);
         console.log(major);
-        await fetch('http://localhost:3000/students', {
+        await fetch(`${import.meta.env.BACKEND_URL}/students`, {
           body: JSON.stringify({
             sId: `${Math.random()}`,
             firstName: firstName,
